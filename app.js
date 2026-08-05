@@ -1,0 +1,19 @@
+const express = require("express");
+const app = express();
+const boardMessages = require("./routes/board");
+const newMessage = require("./routes/new");
+const path = require("node:path");
+const PORT = 3000;
+
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
+app.use("/", boardMessages);
+app.use("/new", newMessage);
+
+app.listen(PORT, (error) => {
+  if (error) {
+    throw error;
+  }
+  console.log("Listening on port 3000");
+});
