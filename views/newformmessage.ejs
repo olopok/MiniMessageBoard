@@ -8,5 +8,13 @@
 <body>
     <h1><%= title %></h1>
     <%- include('../partials/navbar', {links: links}) %>
+    <form method="POST" action="/new">
+        <label for="user">USER NAME:</label>
+        <input type="text" name="user" id="user" placeholder="your name" required>
+        <label for="text">TEXT:</label>
+        <textarea name="messageText" id="text" placeholder="your message"></textarea>
+        <button type="submit">ADD MESSAGE</button>
+</form>
+
 </body>
 </html>
