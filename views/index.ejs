@@ -6,13 +6,20 @@
     <title>Messages Board</title>
   </head>
   <body>
-    <ul>
-        <% for (let i=0; i<messages.length; i++){%>
-            <li>
+        <main>
+          <h1><%= title %></h1>
+          
+              <%- include('../partials/navbar', {links: links}) %>
+              <ul>
+          <% for (let i=0; i<messages.length; i++){%>
+              <li>
+                <%= messages[i].user %>
+                <br>
                 <%= messages[i].text%>
-            </li>
-            <%}%>
-    </ul>
-    <main></main>
+                <hr>
+              </li>
+              <%}%>
+              </ul>
+        </main>
   </body>
 </html>
