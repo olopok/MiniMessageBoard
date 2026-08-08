@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages Board</title>
+</head>
+<body>
+    <div>
+       <h1><%= title %></h1>
+        <%- include('../partials/navbar', {links: links}) %>
+    </div>
+    <div>
+        <p>USER: <%= msg.user %></p>
+        <p>MESSAGE: <%= msg.text %></p>
+        <p>ID MESSAGE: <%= msg.id %></p>
+        <p>DATE ADDED: <%= msg.added %></p>
+    </div>
+</body>
+</html>

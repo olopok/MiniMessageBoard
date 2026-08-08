@@ -7,8 +7,7 @@
   </head>
   <body>
         <main>
-          <h1><%= title %></h1>
-          
+          <h1><%= title %></h1>          
               <%- include('../partials/navbar', {links: links}) %>
               <ul>
           <% for (let i=0; i<messages.length; i++){%>
@@ -16,9 +15,9 @@
                 <%= messages[i].user %>
                 <br>
                 <%= messages[i].text%>
-                <hr>
               </li>        
-              <button>DETAILS</button>
+              <button><a href="/messages/<%= messages[i].id %>">DETAILS</a></button> 
+              <hr>
               <%}%>
               </ul>
         </main>
