@@ -8,7 +8,16 @@ body{
 }
 
 a{
-    color:black
+    color:black;
+    cursor: pointer;
+}
+
+a:hover {
+  background-color: chocolate;
+}
+
+button:hover{
+  background-color: chocolate;
 }
 
 .link-container {
@@ -83,4 +92,38 @@ h1 {
   border-radius: 10px;
   padding-left: 20px;
   background-color: bisque;
+}
+
+.newMsg{
+    display: flex;
+    flex-direction: column;
+    width:60%;
+    margin: 0 auto;
+    gap: 1em;
+}
+
+.userName{
+    width: 30%;
+    border-radius: 5px;
+    padding: 5px;    
+}
+
+.messageText{
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.subBtn{
+    width: fit-content;
+    background-color: beige;
+    padding: 5px;
+    border-radius: 30px;
+}
+
+.container-details{
+  width: 60%;
+  margin: 0 auto;
+  background-color: bisque;
+  padding: 30px;
+  border-radius: 5px;
 }

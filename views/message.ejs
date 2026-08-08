@@ -12,11 +12,11 @@
        <h1><%= title %></h1>
         <%- include('../partials/navbar', {links: links}) %>
     </div>
-    <div>
-        <p>USER: <%= msg.user %></p>
-        <p>MESSAGE: <%= msg.text %></p>
-        <p>ID MESSAGE: <%= msg.id %></p>
-        <p>DATE ADDED: <%= msg.added %></p>
+    <div class="container-details">
+        <p><strong>USER:</strong> <%= msg.user %></p>
+        <p><strong>MESSAGE:</strong> <%= msg.text %></p>
+        <p><strong>ID MESSAGE:</strong> <%= msg.id %></p>
+        <p><strong>DATE ADDED:</strong> <%= msg.added %></p>
     </div>
 </body>
 </html>
