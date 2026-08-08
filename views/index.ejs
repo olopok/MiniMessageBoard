@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Messages Board</title>
-  </head>
+  <%- include('../partials/head') %>
   <body>
-        <main>
-          <h1><%= title %></h1>          
-              <%- include('../partials/navbar', {links: links}) %>
-              <ul>
-          <% for (let i=0; i<messages.length; i++){%>
-              <li>
-                <%= messages[i].user %>
-                <br>
-                <%= messages[i].text%>
-              </li>        
-              <button><a href="/messages/<%= messages[i].id %>">DETAILS</a></button> 
-              <hr>
-              <%}%>
-              </ul>
+        <main class="container">
+          <header class="header-container">
+            <h1><%= title %></h1>
+                <%- include('../partials/navbar', {links: links}) %>
+          </header>
+              <div class="messages-container">
+                <ul class="message-wrap">
+                 <% for (let i=0; i<messages.length; i++){%>
+                <li class="messages-list">
+                  <span><strong>USER:</strong> <%= messages[i].user %></span>
+                  <p class="msg-wrap"><%= messages[i].text%></p>
+                                  <button class="details-btn"><a class="details-link" href="/messages/<%= messages[i].id %>">DETAILS</a></button>
+
+                </li>
+                <%}%>
+                </ul>
+              </div>
         </main>
   </body>
 </html>
