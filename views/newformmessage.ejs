@@ -4,18 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Messages Board</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css" />
   </head>
-<body>
+  <body>
     <h1><%= title %></h1>
     <%- include('../partials/navbar', {links: links}) %>
     <form class="newMsg" method="POST" action="/new">
-        <label for="user">USER NAME:</label>
-        <input class="userName" type="text" name="user" id="user" placeholder="your name" required>
-        <label for="text">TEXT:</label>
-        <textarea class="messageText" name="messageText" id="text" placeholder="your message"></textarea>
-        <button class="subBtn" type="submit">ADD MESSAGE</button>
-</form>
-
-</body>
+      <label for="user">USER NAME:</label>
+      <input
+        class="userName"
+        type="text"
+        name="user"
+        id="user"
+        placeholder="your name"
+        required
+      />
+      <label for="text">TEXT:</label>
+      <textarea
+        class="messageText"
+        name="messageText"
+        id="text"
+        placeholder="your message"
+      ></textarea>
+      <button class="subBtn" type="submit">ADD MESSAGE</button>
+    </form>
+  </body>
 </html>

@@ -4,19 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Messages Board</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css" />
   </head>
 
-<body>
+  <body>
     <div>
-       <h1><%= title %></h1>
-        <%- include('../partials/navbar', {links: links}) %>
+      <h1><%= title %></h1>
+      <%- include('../partials/navbar', {links: links}) %>
     </div>
     <div class="container-details">
-        <p><strong>USER:</strong> <%= msg.user %></p>
-        <p><strong>MESSAGE:</strong> <%= msg.text %></p>
-        <p><strong>ID MESSAGE:</strong> <%= msg.id %></p>
-        <p><strong>DATE ADDED:</strong> <%= msg.added %></p>
+      <p>
+        <strong>USER:</strong>
+        <%= msg.user %>
+      </p>
+      <p>
+        <strong>MESSAGE:</strong>
+        <%= msg.text %>
+      </p>
+      <p>
+        <strong>ID MESSAGE:</strong>
+        <%= msg.id %>
+      </p>
+      <p>
+        <strong>DATE ADDED:</strong>
+        <%= msg.added %>
+      </p>
     </div>
-</body>
+  </body>
 </html>
