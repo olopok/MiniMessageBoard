@@ -5,7 +5,7 @@ const newMessage = require("./routes/new");
 const detailsMsg = require("./routes/details");
 const path = require("node:path");
 const assetsPath = path.join(__dirname, "public");
-const PORT = 10000;
+const PORT = process.env.PORT || 3000;
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -21,5 +21,5 @@ app.listen(PORT, (error) => {
   if (error) {
     throw error;
   }
-  console.log("Listening on port 3000");
+  console.log(`Listening on port ${PORT}`);
 });
