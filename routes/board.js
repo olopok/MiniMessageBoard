@@ -1,4 +1,5 @@
 const { Router } = require("express");
+const pool = require("./db/pool");
 // const messages = require("../models/dbMessages");
 // const links = require("../models/navlinks");
 
@@ -20,8 +21,5 @@ messagesRouter.get("/", async (req, res) => {
     res.status(500).send("Errore database");
   }
 });
-
-
-
 
 module.exports = messagesRouter;
