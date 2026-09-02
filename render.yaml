@@ -1,0 +1,15 @@
+services:
+- type: web
+name: MiniMessageBoard
+env: node
+buildCommand: npm install
+startCommand: node app.js
+envVars: 
+- key: DATABASE_URL
+  fromDatabase:
+    name: messagesboard
+    property: connectionString
+
+databases:
+- name: messagesboard
+  plan: free
