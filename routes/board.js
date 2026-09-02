@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const pool = require("./db/pool");
+const pool = require("../db/pool");
 // const messages = require("../models/dbMessages");
 // const links = require("../models/navlinks");
 
