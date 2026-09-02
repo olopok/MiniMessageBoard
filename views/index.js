@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head><title>Test DB</title></head>
 <body>
   <h1>Connessione al database riuscita!</h1>

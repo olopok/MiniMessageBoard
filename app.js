@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 dotenv.config();
-const pool = require("./db");
+const pool = require("./db/pool");
 
 // const boardMessages = require("./routes/board");
 // const newMessage = require("./routes/new");
