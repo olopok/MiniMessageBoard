@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const pool = require("../db/pool");
+const messagesController = require("../controllers/messagesController");
 // const messages = require("../models/dbMessages");
 // const links = require("../models/navlinks");
 
@@ -12,14 +13,5 @@ const messagesRouter = Router();
 //     links: links,
 //   }),
 // );
-messagesRouter.get("/", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT NOW()");
-    res.render("index", { time: result.rows[0].now });
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Errore database");
-  }
-});
-
+messagesRouter.get("/", messagesController.getMessages);
 module.exports = messagesRouter;
