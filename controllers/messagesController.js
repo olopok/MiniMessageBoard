@@ -1,5 +1,21 @@
 const dbMess = require("../db/queries");
 const links = require("../models/navlinks");
+const { body, validationResult } = require("express-validator");
+
+const validateInput = [
+  body("username")
+    .trim()
+    .isAlphanumeric()
+    .withMessage("Username must contain only letters and numbers")
+    .isLength({ min: 1 })
+    .withMessage("Min 1 caracther")
+    .escape(),
+  body("text")
+    .trim()
+    .isLength({ min: 1, max: 255 })
+    .withMessage("Text message must contain min 1 max 255 caracthers")
+    .escape(),
+];
 
 async function getMessages(req, res) {
   try {
@@ -21,9 +37,17 @@ function newMessageGet(req, res) {
 }
 
 async function createNewMessagePost(req, res) {
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    return res.status(400).render("newformmessage", {
+      title: "New Message",
+      links,
+      errors: errors.array(),
+    });
+  }
   const { username, text } = req.body;
   await dbMess.newMessagePost(username, text);
-  // res.render("newformmessage", { title: "New Message", link: links });
   res.redirect("/");
 }
 
@@ -36,4 +60,10 @@ async function details(req, res) {
   res.render("message", { title: "Message Details", links: links, msg });
 }
 
-module.exports = { getMessages, createNewMessagePost, newMessageGet, details };
+module.exports = {
+  getMessages,
+  createNewMessagePost,
+  newMessageGet,
+  details,
+  validateInput,
+};

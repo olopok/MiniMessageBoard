@@ -9,6 +9,10 @@ const messagesRouter = Router();
 messagesRouter.get("/", messagesController.getMessages);
 messagesRouter.get("/new", messagesController.newMessageGet);
 messagesRouter.get("/messages/:id", messagesController.details);
-messagesRouter.post("/new", messagesController.createNewMessagePost);
+messagesRouter.post(
+  "/new",
+  messagesController.validateInput,
+  messagesController.createNewMessagePost,
+);
 
 module.exports = messagesRouter;
